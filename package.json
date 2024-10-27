@@ -1,9 +1,12 @@
 {
+  "homepage": "https://github.com/rohankumar390/GitHub-Profile-Finder",
   "name": "github-console",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy":"npm run deploy",
+    "deploy":"github pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
