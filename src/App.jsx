@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import GitHubProfiles from "./GitHubProfiles"; // Import the GitHubProfiles component
 import Login from "./login";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   Navigate,
@@ -77,7 +77,7 @@ function App() {
                       type="text"
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)} // Manage the search input
-                      placeholder={`Search GitHub profiles by ${searchType}`} // Dynamically update placeholder
+                      placeholder={Search GitHub profiles by ${searchType}} // Dynamically update placeholder
                     />
 
                     <select
