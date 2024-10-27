@@ -77,7 +77,7 @@ function App() {
                       type="text"
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)} // Manage the search input
-                      placeholder={Search GitHub profiles by ${searchType}} // Dynamically update placeholder
+                      placeholder={`Search GitHub profiles by ${searchType}`} // Dynamically update placeholder
                     />
 
                     <select
