@@ -7,27 +7,26 @@ const GitHubProfiles = ({ searchInput, searchType }) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Debounce function to delay the API call until the user stops typing
     const delayDebounceFn = setTimeout(() => {
       if (searchInput) {
-        fetchProfiles(searchInput, searchType); // Pass both input and search type
+        fetchProfiles(searchInput, searchType);
       }
-    }, 500); // 500ms delay
+    }, 500);
 
-    return () => clearTimeout(delayDebounceFn); // Cleanup function to cancel previous timeout on new input
-  }, [searchInput, searchType]); // Trigger effect when searchInput or searchType changes
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchInput, searchType]);
 
   const fetchProfiles = async (query, type) => {
     setLoading(true);
     setError("");
-    
+
     let queryParam = "";
     if (type === "location") {
       queryParam = `location:${query}`;
     } else if (type === "username") {
-      queryParam = `${query} in:login`; // 'login' is the username field in GitHub API
+      queryParam = `${query} in:login`;
     } else if (type === "fullname") {
-      queryParam = `${query} in:name`; // 'name' is the full name field in GitHub API
+      queryParam = `${query} in:name`;
     }
 
     try {
@@ -36,7 +35,6 @@ const GitHubProfiles = ({ searchInput, searchType }) => {
       );
       setProfiles(response.data.items);
     } catch (err) {
-      console.error(err);
       setError("Error fetching data. Please try again.");
     } finally {
       setLoading(false);

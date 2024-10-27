@@ -54,12 +54,6 @@
   box-sizing: border-box;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.sticky-container input:focus {
-  transform: scale(1.03);
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
-}
-
 /* Scrollable Table Container */
 .table-container {
   max-height: 70vh; /* Limits the height of the table and makes it scrollable */
